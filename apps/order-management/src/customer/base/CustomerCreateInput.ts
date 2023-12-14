@@ -61,6 +61,17 @@ class CustomerCreateInput {
     nullable: true,
   })
   orders?: OrderCreateNestedManyWithoutCustomersInput;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  phone?: string | null;
 }
 
 export { CustomerCreateInput as CustomerCreateInput };
